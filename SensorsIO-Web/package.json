@@ -11,15 +11,20 @@
     "README.md",
     "index.js",
     "lib/"
-	],
+  ],
   "license": "MIT",
   "repository": "pkoltun/SensorsIO",
   "dependencies": {
+    "express": "^4.12.2",
+    "object-assign": "^2.0.0",
+    "react": "^0.12.2",
     "sensors-io": "0.0.3",
     "socket.io": "^1.3.5",
     "socket.io-client": "^1.3.5"
   },
   "devDependencies": {
-    "mocha": "^2.1.0"
+    "browserify": "^9.0.3",
+    "mocha": "^2.1.0",
+    "reactify": "^1.0.0"
   }
 }

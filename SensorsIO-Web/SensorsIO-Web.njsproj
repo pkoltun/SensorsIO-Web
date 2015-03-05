@@ -12,7 +12,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>edac7324-a62e-4890-9643-7421db0f7ed9</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>app.js</StartupFile>
+    <StartupFile>example\app.js</StartupFile>
     <StartWebBrowser>False</StartWebBrowser>
     <SearchPath>
     </SearchPath>
@@ -30,19 +30,39 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="app.js" />
+    <Compile Include="example\app.js" />
+    <Compile Include="index.js" />
     <Compile Include="lib\SocketIOServer.js" />
+    <Compile Include="reactViews\sensor.js" />
+    <Compile Include="scripts\react-with-addons.js" />
+    <Compile Include="scripts\react-with-addons.min.js" />
+    <Compile Include="scripts\react.js" />
+    <Compile Include="scripts\react.min.js" />
     <Compile Include="test\SocketIOServerTest.js">
       <SubType>Code</SubType>
       <TestFramework>Mocha</TestFramework>
     </Compile>
+    <Content Include="css\sensor.css">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="views\index.html" />
     <Content Include="package.json" />
     <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="css\" />
+    <Folder Include="views\" />
     <Folder Include="lib\" />
+    <Folder Include="example\" />
+    <Folder Include="scripts\" />
+    <Folder Include="reactViews\" />
     <Folder Include="test\" />
   </ItemGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+      browserify -t [ reactify --es6] -o scripts\bundle.js reactViews\sensor.js
+	</PreBuildEvent>
+  </PropertyGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />

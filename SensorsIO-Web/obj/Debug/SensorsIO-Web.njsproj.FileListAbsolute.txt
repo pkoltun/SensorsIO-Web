@@ -1,0 +1,2 @@
+C:\dev\IO\SensorsIO-Web\SensorsIO-Web\obj\Debug\SensorsIO-Web.njsprojResolveAssemblyReference.cache
+C:\dev\IO\SensorsIO-Web\SensorsIO-Web\bin\Microsoft.NodejsTools.WebRole.dll

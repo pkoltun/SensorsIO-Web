@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "SensorsIO-Web", "SensorsIO-Web\SensorsIO-Web.njsproj", "{EDAC7324-A62E-4890-9643-7421DB0F7ED9}"
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "SensorsIO-Web", "SensorsIO-Web.njsproj", "{EDAC7324-A62E-4890-9643-7421DB0F7ED9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

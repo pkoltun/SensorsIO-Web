@@ -74,3 +74,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 SensorsIO-Web/.ntvs_analysis.dat
+.ntvs_analysis.dat.tmp

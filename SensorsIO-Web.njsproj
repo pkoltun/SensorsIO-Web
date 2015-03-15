@@ -35,10 +35,6 @@
     <Compile Include="lib\SocketIOServer.js" />
     <Compile Include="reactViews\manager.js" />
     <Compile Include="reactViews\sensor.js" />
-    <Compile Include="scripts\react-with-addons.js" />
-    <Compile Include="scripts\react-with-addons.min.js" />
-    <Compile Include="scripts\react.js" />
-    <Compile Include="scripts\react.min.js" />
     <Compile Include="test\SocketIOServerTest.js">
       <SubType>Code</SubType>
       <TestFramework>Mocha</TestFramework>
@@ -61,7 +57,7 @@
   </ItemGroup>
   <PropertyGroup>
     <PreBuildEvent>
-      browserify -t [ reactify --es6] -o scripts\bundle.js reactViews\manager.js
+      browserify -t [ reactify --es6] -o scripts\sensors-io-web.js reactViews\manager.js
 	</PreBuildEvent>
   </PropertyGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->

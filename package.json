@@ -1,6 +1,6 @@
 {
   "name": "sensors-io-web",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "sensors-io-web",
   "main": "index.js",
   "author": {
@@ -15,7 +15,6 @@
   "license": "MIT",
   "repository": "pkoltun/SensorsIO",
   "dependencies": {
-    "express": "^4.12.2",
     "object-assign": "^2.0.0",
     "react": "^0.12.2",
     "sensors-io": "0.0.5",

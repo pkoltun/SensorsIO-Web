@@ -1,4 +1,5 @@
-﻿var EventEmitter = require('events').EventEmitter;
+﻿var React = require('react');
+var EventEmitter = require('events').EventEmitter;
 var assign = require('object-assign');
 var Sensor = require('./sensor').Sensor;
 

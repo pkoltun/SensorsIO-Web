@@ -1,21 +1,10 @@
 ﻿var util = require("util");
 var sensorsio = require('sensors-io');
 var sensor = sensorsio.Sensor;
-var express = require('express')
-var app = express()
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+var http = require('http');
 var SocketioServer = require("../lib/SocketIOServer.js");
 var assign = require('object-assign');
-
-var serverPort = 3000;
-
-app.use('/scripts', express.static('scripts'));
-app.use('/css', express.static('css'));
-
-
-app.use(express.static('views'));
-
+var read = require('fs').readFileSync;
 
 
 function CustomSensor() {
@@ -28,12 +17,6 @@ function CustomSensor() {
 }
 
 util.inherits(CustomSensor, sensor.Sensor);
-
-
-
-var createServer = SocketioServer.getServerCreator(io);
-
-var sensorsServer = new sensorsio.SensorsServer.Server(http, serverPort, [createServer]);
 
 var sensorState = {};
 
@@ -57,32 +40,16 @@ var changeState = function () {
 
 setInterval(changeState, 1500);
 
-
+var serverPort = 3000;
+var serverPair = SocketioServer.configureSimpleServers(http, serverPort);
+var sensorsServer = serverPair.sensorsServer;
+var server = serverPair.httpServer;
 
 sensorsServer.addSensor(changingSensor, 'modifyStateTest');
 sensorsServer.addSensor(sensorWithMessage, 'modifyStateWithMessageTest');
 sensorsServer.addSensor(sensorWithMessage, 'copySensor');
 
-var getSensorsList = function (z){
-    var sensorsList = sensorsServer.sensorsWithSocket.map(function (x){
-        var sensor = x.sensor;
-        
-        return {
-            path: x.path, 
-            name : sensor.name,
-            readOnly: sensor.readOnly === true,
-            state: sensor.state
-        }
-    })
-    io.emit('sensorsListResponse', sensorsList);
-}
 
-io.on('connection', function (socket) {
-    socket.on("getSenorsList", getSensorsList)
-    //TODO send only to this socket
-});;
-
-
-http.listen(serverPort, function () {
+server.listen(serverPort, function () {
     console.log('listening on *:3000');
 });

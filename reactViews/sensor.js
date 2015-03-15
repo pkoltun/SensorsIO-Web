@@ -1,4 +1,5 @@
-﻿var assign = require("object-assign");
+﻿var React = require('react');
+var assign = require("object-assign");
 var SensorDetailsDisplay = React.createClass({
     render: function () {
         var sensorState = this.props.sensorState;

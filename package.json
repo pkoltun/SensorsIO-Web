@@ -1,6 +1,6 @@
 {
   "name": "sensors-io-web",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "sensors-io-web",
   "main": "index.js",
   "author": {

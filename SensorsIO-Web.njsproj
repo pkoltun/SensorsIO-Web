@@ -33,8 +33,12 @@
     <Compile Include="example\app.js" />
     <Compile Include="index.js" />
     <Compile Include="lib\SocketIOServer.js" />
-    <Compile Include="reactViews\manager.js" />
-    <Compile Include="reactViews\sensor.js" />
+    <Content Include="reactViews\manager.js">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="reactViews\sensor.js">
+      <Publish>True</Publish>
+    </Content>
     <Compile Include="test\SocketIOServerTest.js">
       <SubType>Code</SubType>
       <TestFramework>Mocha</TestFramework>

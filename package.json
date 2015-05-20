@@ -1,6 +1,6 @@
 {
   "name": "sensors-io-web",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "sensors-io-web",
   "main": "index.js",
   "author": {
@@ -10,14 +10,17 @@
   "files": [
     "README.md",
     "index.js",
-    "lib/"
+    "lib/",
+    "views/",
+    "css",
+    "scripts/"
   ],
   "license": "MIT",
   "repository": "pkoltun/SensorsIO",
   "dependencies": {
     "object-assign": "^2.0.0",
     "react": "^0.12.2",
-    "sensors-io": "0.0.5",
+    "sensors-io": "0.0.6",
     "socket.io": "^1.3.5",
     "socket.io-client": "^1.3.5"
   },

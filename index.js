@@ -1,1 +1,1 @@
-﻿module.exports.Sensor = require('./lib/SocketIOServer.js')
+﻿module.exports.Server = require('./lib/SocketIOServer.js')

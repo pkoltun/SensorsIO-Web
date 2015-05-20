@@ -41,7 +41,7 @@ var changeState = function () {
 setInterval(changeState, 1500);
 
 var serverPort = 3000;
-var serverPair = SocketioServer.configureSimpleServers(http, serverPort);
+var serverPair = SocketioServer.configureSimpleServers(http, serverPort, true);
 var sensorsServer = serverPair.sensorsServer;
 var server = serverPair.httpServer;
 
